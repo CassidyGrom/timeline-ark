@@ -1,8 +1,11 @@
+<!-- this is the CSS. There shouldn't be much reason to mess with this, unless you need to change a color etc -->
 <head>
-	<!-- external css link to LATO -->
+	<!-- external css link to LATO, if you ever need to change the font, go to typekit or google fonts and get the link to insert here -->
 	<link rel="stylesheet" href="https://use.typekit.net/ihw0gqv.css">
-  <style>
-	
+
+<style>
+
+/* these control general spacing of the layout */
 section {
   padding: 2em 0;
 }
@@ -18,7 +21,7 @@ body {
   background-color: #ECECEC;
 }
 
-
+/* this is the area that holds the png for "Arkansas LEARNS Timeline" headline on desktop */
 #header {
     grid-area: header;
     margin: auto 10px;
@@ -54,7 +57,7 @@ body {
 	width: 40%;
 }
 
-
+/* Depedning on your code processor, you may get red squiqqles throughout the CSS. You can ignore that. */
 .timeline {
 
 	position: relative;
@@ -70,6 +73,7 @@ body {
 	}
 }
 
+/* controls the "cards and spacing" as well as the alternating pattern on desktop */
 .timeline-item {
 	width: 100%;
 	margin-bottom: 70px;
@@ -128,6 +132,7 @@ body {
 	}
 }
 
+/* if the blue dot on the line is missing, this is the div that is missing */
 .timeline-img {
 	width: 30px;
 	height: 30px;
@@ -139,6 +144,7 @@ body {
 	margin-left: -15px;
 }
 
+/* this controls the read more button */
 a {
 	background: #0274b7;
 	color: #FFFFFF;
@@ -172,27 +178,7 @@ a {
 	}
 }
 
-.timeline-item {
-  .timeline-img-header {
-			background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('https://wehco.media.clients.ellingtoncms.com/img/photos/2023/08/07/ar-learns_blue-AR.png') center center no-repeat;
-			background-size: cover;
-		}
-}
-
-.timeline-img-header {
-
-	height: 200px;
-	position: relative;
-	margin-bottom: 20px;
-
-	h2 {
-		color: #FFFFFF;
-		position: absolute;
-		bottom: 5px;
-		left: 20px;
-	}
-}
-
+/* this controls the card headlines */
 h3{
 	font-family: "lato", sans-serif;
     font-weight: 800;
@@ -202,33 +188,22 @@ h3{
 	margin-top:.7em;
 }
 
-/* blockquote {
-	margin-top: 30px;
-	color: $secondary-text;
-	border-left-color: $primary;
-	padding: 0 20px;
-} */
-
+/* this controls the date */
 .date {
 	background: #ffc857;
     display: inline-block;
     color: white;
     padding: 10px;
-    /* position: absolute; */
     top: 0;
     right: 0;
     width: 100%;
-    /* margin-bottom: 1em; */
     font-family: "lato", sans-serif;
     font-weight: 800;
     font-size: 1.2em;
     font-style: italic;
 }
 
-.internal-content{
-	padding:0px 10px;
-}
-
+/* when the layout switches to mobile, this contorls that */
 @media screen and (max-width: 768px) {
 	#header {
 		grid-area: header;
@@ -249,35 +224,26 @@ h3{
 }
 	
 	.timeline {
-
 		&::before {
 			left: 50px;
 		}
-
 		.timeline-img {
 			left: 50px;
 		}
-
 		.timeline-content {
 			max-width: 100%;
 			width: auto;
 			margin-left: 70px;
 		}
-
 		.timeline-item {
-
 			&:nth-child(even) {
-
 				.timeline-content {
 					float: none;
 
 				}
 			}
-
 			&:nth-child(odd) {
-
 				.timeline-content {
-					
 					&::after {
 						content: '';
 						position: absolute;
@@ -301,16 +267,17 @@ h3{
   </style>
 </head>
 
+<!-- HTML STARTS HERE  -->
 <body>
+	<!-- header with a CSS background image for the logo -->
 	<div id="header">
-	
 	</div>
  
 	<div class="container">
-
 	<section class="timeline">
+		<!-- Any timeline additions should occur here this is where you can play -->
 
-	<!-- TEMPLATE START -->
+	<!-- Copy and paste this into the appropriate spot if you want a card with a photo  START -->
 	<!-- <div class="timeline-item">z
 		<div class="timeline-img"></div>
 		  <div class="timeline-content js--fadeInLeft">
@@ -323,7 +290,22 @@ h3{
 			<a class="bnt-more" href="https://www.arkansasonline.com/news/2023/feb/17/education-chief-discusses-plan/">Read More</a>
 		  </div>
 		</div>  -->
-	<!-- TEMPLATE END -->
+	<!-- TEMPLATE with photo END -->
+
+	<!-- Copy this if you want a card without photo START -->
+	<!-- <div class="timeline-item">z
+		<div class="timeline-img"></div>
+		  <div class="timeline-content js--fadeInLeft">
+			<div class="date">TEMPLATE</div>
+			<div class="photo-container">
+				<img src="https://wehco.media.clients.ellingtoncms.com/imports/adg/photos/205024616_TM_0209_HouseEd11_crop_t800.jpg" alt="HTML5 Icon" width="100%" height="auto" style="margin-top:1em;">
+			</div>
+			<h3>TEMPLATE FOR ALL</h3>
+			<p>Templateeee </p>
+			<a class="bnt-more" href="https://www.arkansasonline.com/news/2023/feb/17/education-chief-discusses-plan/">Read More</a>
+		  </div>
+		</div>  -->
+	<!-- TEMPLATE without photo END -->
 
 	
 	<div class="timeline-item">
