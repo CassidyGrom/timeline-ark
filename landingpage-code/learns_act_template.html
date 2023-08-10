@@ -1,0 +1,243 @@
+{% extends "base_generic.html" %}
+
+{% load dateutil mogrify content sectionfronts listutil sections stories navigation %}
+
+{% block head %}
+    {{ block.super }}
+    <style>
+        .container {
+            max-width: initial!important;
+            margin: 0 2rem!important;
+            width: 100%;
+        }
+
+        .learns_story {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #learns_data_story {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #learns_ad_unit_1 {
+            width: 300px;
+            height: 600px;
+            color: white;
+            background-color: #0b7fa0;
+        }
+
+        #learns_ad_unit_2 {
+            background-color: #0b7fa0;
+            color: white;
+        }
+
+        #learns__contact {
+            background-color: #0b7fa0;
+            color: white;
+        }
+
+    </style>
+
+
+{% endblock head %}
+
+{% block data_layer %}{% include 'includes/dataLayer_sections.html' %}{% endblock %}
+
+
+{% block subheader %}
+<div class="subheader">
+    <a class="subheader__link--e-edition" href="/eedition/"><em class="fas fa-newspaper"></em>Today's Paper</a>
+    <!-- <a class="subheader__link--e-edition" href="https://digital.olivesoftware.com/Olive/ODN/ArDemocrat/" title="title"><em class="fas fa-newspaper"></em>Today's Paper</a> -->
+    {% get_navigation_by_name "ao_learns_subheader" as sub_nav %}
+    {% for link in sub_nav.get_children %}
+    {% if link.descendents.all %}
+    <a class="subheader__link" href="{{ link.link_url }}" title="{{ link.title }}">{{ link.title }}</a>
+    {% else %}
+    <a class="subheader__link" href="{{ link.link_url }}" title="{{ link.title }}">{{ link.title }}</a>
+    {% endif %}
+    {% endfor %}
+    <div class="indicator"></div>
+    <div style="flex-grow: 1; display: flex; justify-content: flex-end;">
+        <a class="subheader__link" href="https://www.facebook.com/arkansasonline/" title="Arkansas Democrat-Gazette Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a class="subheader__link" href="https://twitter.com/ArkansasOnline" title="Arkansas Democrat-Gazette Twitter"><i class="fab fa-twitter"></i></a>
+        <a class="subheader__link" href="https://www.instagram.com/arkansasonline/" title="Arkansas Democrat-Gazette Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+{% endblock subheader %}
+{% block topad %}{% endblock topad %}
+
+{% block rails_class %}left-and-right-rail no-right-rail{% endblock rails_class %}
+
+{% block page_content %}
+
+{% block left_rail_content %}
+
+    {% get_section_front for section.url as learns %}
+
+{% with learns.lede_story as lede %}
+
+<div class="learns__story">
+
+    {% if lede.tease_photo %}
+        <a class="learns__story_image" href="{{ lede.get_absolute_url }}"><img src="{% mogrify lede.tease_photo.url thumbnail '800' %}"/></a>
+
+
+    {% elif lede.lead_photo %}
+
+        <a class="learns__story_image href="{{ lede.get_absolute_url }}"><img src="{% mogrify lede.lead_photo.cropped.url thumbnail '800' %}"/></a>
+    <!--add generic tease image element with else clause-->
+
+    {% endif %}
+
+    {% with lede.categories.all as categories %}
+        <ul class="learns__story_category-list">
+        {% for category in categories %}
+            {% with category.slug as slug %}
+                {% if slug == "parents" or slug == "teachers" or slug == "students" %}
+                    <li class="learns__story_category-link"><a href="{{ slug }}">{{ slug | upper }}</a></li>
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+        </ul>
+    {% endwith %}
+
+            <span class="learns__story-title"><a href="{{ lede.get_absolute_url }}" title="{{ lede.headline }}">{{ lede.headline|safe|striptags }}</a></span>
+
+            {% if lede.tease %}<p class="learns__story-lead">{{ lede.tease|striptags|truncatechars:"160" }}</p>{% endif %}
+</div>
+{% endwith %}
+
+{% with learns.featured_story as featured %}
+
+<div class="learns__story">
+
+    {% if featured.tease_photo %}
+    <a class="learns__story_image" href="{{ featured.get_absolute_url }}"><img src="{% mogrify featured.tease_photo.url thumbnail '800' %}"/></a>
+
+    {% elif featured.lead_photo %}
+
+    <a class="learns__story_image" href="{{ featured.get_absolute_url }}"><img src="{% mogrify featured.lead_photo.cropped.url thumbnail '800' %}"/></a>
+    <!--add generic tease image element with else clause-->
+
+    {% endif %}
+
+    {% with featured.categories.all as categories %}
+    <ul class="learns__story_category-list">
+        {% for category in categories %}
+        {% with category.slug as slug %}
+        {% if slug == "parents" or slug == "teachers" or slug == "students" %}
+        <li class="learns__story_category_link"><a href="{{ slug }}">{{ slug | upper }}</a></li>
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </ul>
+    {% endwith %}
+
+    <span class="learns__story-title"><a href="{{ featured.get_absolute_url }}" title="{{ featured.headline }}">{{ featured.headline|safe|striptags }}</a></span>
+
+    {% if featured.tease %}<p class="learns__story-lead">{{ featured.tease|striptags|truncatechars:"160" }}</p>{% endif %}
+</div>
+
+{% endwith %}
+
+{% for story in learns.top_stories %}
+
+<div class="learns__story">
+
+    {% if story.tease_photo %}
+    <a class="learns__story_image" href="{{ story.get_absolute_url }}"><img src="{% mogrify story.tease_photo.url thumbnail '800' %}"/></a>
+
+    {% elif story.lead_photo %}
+
+    <a class="learns__story_image" href="{{ story.get_absolute_url }}"><img src="{% mogrify story.lead_photo.cropped.url thumbnail '800' %}"/></a>
+    <!--add generic tease image element with else clause-->
+
+    {% endif %}
+
+    {% with story.categories.all as categories %}
+    <ul class="learns__story_category-list">
+        {% for category in categories %}
+        {% with category.slug as slug %}
+        {% if slug == "parents" or slug == "teachers" or slug == "students" %}
+        <li class="learns__story_category_link"><a href="{{ slug }}">{{ slug | upper }}</a></li>
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </ul>
+    {% endwith %}
+
+    <span class="learns__story-title"><a href="{{ story.get_absolute_url }}" title="{{ story.headline }}">{{ story.headline|safe|striptags }}</a></span>
+
+    {% if story.tease %}<p class="learns__story-lead">{{ story.tease|striptags|truncatechars:"160" }}</p>{% endif %}
+</div>
+
+{% endfor %}
+
+
+{% if learns.data_story %}
+<div id="learns_data_story">
+    {{ learns.data_story.content}}
+</div>
+{% endif %}
+
+<div id="learns_ad_unit_1">
+    <span>300x600 ad unit here.</span>
+
+</div>
+
+{% for story in learns.more_story %}
+
+<div class="learns__story">
+
+    {% if story.tease_photo %}
+    <a class="learns__story_image" href="{{ story.get_absolute_url }}"><img src="{% mogrify story.tease_photo.url thumbnail '800' %}"/></a>
+
+    {% elif story.lead_photo %}
+
+    <a class="learns__story_image" href="{{ story.get_absolute_url }}"><img src="{% mogrify story.lead_photo.cropped.url thumbnail '800' %}"/></a>
+    <!--add generic tease image element with else clause-->
+
+    {% endif %}
+
+    {% with story.categories.all as categories %}
+    <ul class="learns__story_category-list">
+        {% for category in categories %}
+        {% with category.slug as slug %}
+        {% if slug == "parents" or slug == "teachers" or slug == "students" %}
+        <li class="learns__story_category_link"><a href="{{ slug }}">{{ slug | upper }}</a></li>
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </ul>
+    {% endwith %}
+
+    <span class="learns__story-title"><a href="{{ story.get_absolute_url }}" title="{{ story.headline }}">{{ story.headline|safe|striptags }}</a></span>
+
+    {% if story.tease %}<p class="learns__story-lead">{{ story.tease|striptags|truncatechars:"160" }}</p>{% endif %}
+</div>
+
+{% endfor %}
+
+<div id="learns_ad_unit_2">
+    <span>flexible ad unit here</span>
+
+</div>
+
+<div id="latest_stories">
+    {% get_latest_stories 5 learns_act as latest %}
+    <ul id="latst_story_list">
+        {% for story in latest %}
+        <li><a href="{{ story.get_absolute_url }}">{{ story.headline }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div id="learns__contact">
+    <p>Contact form CTA goes here</p>
+</div>
+
+{% endblock left_rail_content %}
+
+{% endblock page_content %}
