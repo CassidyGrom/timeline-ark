@@ -13,6 +13,20 @@ font-size: 1.875em;
 p {
 font-size: 0.875em;
 }
+
+/* #learns-header h1 {
+    font-size: 4.5em;
+    font-weight: 300;
+    margin: 0;
+    background-color:yellow;
+} */
+
+#learns-header{
+    height: 500px;
+    display:block;
+    background-color:yellow;
+}
+
 .ad{
     padding:10px;
     background-color:#e8e8e8
@@ -95,10 +109,10 @@ font-size: 0.875em;
     padding:10px 10px 0
 }
 @media only screen and (min-width:60em){
-    .article-content-container{
+     .article-content-container{
         max-width:40%;
         padding:0 10px 0 0
-    }
+    } 
 }
 .article-content-container.video{
     max-width:100%
@@ -106,7 +120,7 @@ font-size: 0.875em;
 @media only screen and (min-width:60em){
     .article-media-container{
         width:60%
-    }
+    } 
 }
 .article-media-container.video{
     width:auto;
@@ -234,38 +248,65 @@ font-size: 0.875em;
     flex:1 1 auto;
     border-top:.5px solid #000
 }
-
+#footer {
+    padding: 1em;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+  }
+  @media only screen and (min-width: 40em) {
+    #footer {
+      display: block;
+    }
+  }
+  .footer-item {
+    font-size: 0.75em;
+    color: #fff;
+  }
+  @media only screen and (min-width: 40em) {
+    .footer-item {
+      font-size: 0.8em;
+    }
+  }
+  .footer-item:after {
+    padding: 0 1em;
+    content: "|";
+  }
+  .footer-item:last-child:after {
+    padding: 0;
+    content: "";
+  }
 
 #main{
     width:100%;
     max-width:100em;
     margin:0 auto;
-    padding-top:55px;
+    /* padding-top:55px; */
     padding-bottom:20px;
     box-sizing:border-box;
     display:grid;
     grid-template-columns:1fr;
     grid-template-rows:100px 3em repeat(5,minmax(-webkit-min-content,-webkit-max-content)) 3em repeat(3,minmax(-webkit-min-content,-webkit-max-content)) 3em repeat(3,minmax(-webkit-min-content,-webkit-max-content)) 300px auto auto;
-    grid-template-rows:100px 3em repeat(5,minmax(min-content,max-content)) 3em repeat(3,minmax(min-content,max-content)) 3em repeat(3,minmax(min-content,max-content)) 300px auto auto;
-    grid-template-areas:"header" "title1" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "contact"
+    grid-template-rows:150px 3em repeat(5,minmax(min-content,max-content)) 3em repeat(3,minmax(min-content,max-content)) 3em repeat(3,minmax(min-content,max-content)) 300px auto auto;
+    grid-template-areas:"title1" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "contact"
 }
-@media only screen and (min-width:500px){
+@media only screen and (min-width:60em){
     #main{
         grid-template-columns:repeat(2,1fr);
         grid-template-rows:100px 3em repeat(3,minmax(10em,-webkit-min-content)) 300px repeat(2,minmax(10em,-webkit-min-content)) 3em repeat(3,minmax(-webkit-min-content,-webkit-max-content));
         grid-template-rows:100px 3em repeat(3,minmax(10em,min-content)) 300px repeat(2,minmax(10em,min-content)) 3em repeat(3,minmax(min-content,max-content));
-        grid-template-areas:"header header" "title1 latest" "a1 latest" "a1 latest" "a2 latest" "b1 ad" "b2 contact" "b3 contact" "title2 title3" "c1 d1" "c2 d2" "c3 d3"
+        grid-template-areas:"title1 latest" "a1 latest" "a1 latest" "a2 latest" "b1 ad" "b2 contact" "b3 contact" "title2 title3" "c1 d1" "c2 d2" "c3 d3"
     }
     #main .a1,#main .a2,#main .b1,#main .b2,#main .b3,#main .c1,#main .c2,#main .c3{
         border-right:1px solid grey
     }
 }
-@media only screen and (min-width:900px){
+@media only screen and (min-width:80em){
     #main{
         grid-template-columns:repeat(3,1fr);
         grid-template-rows:100px 3em repeat(3,minmax(10em,-webkit-min-content)) 3em 350px repeat(2,minmax(-webkit-min-content,-webkit-max-content));
         grid-template-rows:100px 3em repeat(3,minmax(10em,min-content)) 3em 350px repeat(2,minmax(min-content,max-content));
-        grid-template-areas:"header header header" "title1 title1 latest" "a1 b1 latest" "a1 b2 latest" "a2 b3 latest" "title2 title3 ad" "c1 d1 ad" "c2 d2 contact" "c3 d3 contact"
+        grid-template-areas:"learns-header learns-header learns-header" "title1 title1 latest" "a1 b1 latest" "a1 b2 latest" "a2 b3 latest" "title2 title3 ad" "c1 d1 ad" "c2 d2 contact" "c3 d3 contact"
     }
     #main .a2:after{
         border-bottom:none
@@ -274,28 +315,28 @@ font-size: 0.875em;
         border-right:1px solid grey
     }
 }
-#header{
-    grid-area:header;
+#learns-header{
+    grid-area:learns-header;
     margin:auto 10px;
     font-family:"Merriweather",serif;
     text-align:center;
     align-content:center
 }
-#header h1{
+#learns-header h1{
     font-size:4.5em;
     font-weight:300;
     margin:0
 }
-#header .tagline-container{
+#learns-header .tagline-container{
     width:50%;
     margin:0 auto;
     background-color:#c6d653;
     position:relative;
-    z-index:2;
+    /* z-index:2; */
     bottom:1em
 }
-#header .header-container{
-    z-index:5;
+#learns-header .header-container{
+    /* z-index:5; */
     position:relative
 }
 #header h3{
@@ -306,7 +347,7 @@ font-size: 0.875em;
     text-align:left;
     padding-left:1em
 }
-#header .title2{
+#learns-header .title2{
     font-weight:900;
     font-style:normal
 }
@@ -381,39 +422,39 @@ font-size: 0.875em;
     border-top:.5px solid #000
 }
 @media only screen and (max-width:639px){
-    #header{
+    #learns-header{
         font-size:.65em
     }
 }
 @media only screen and (max-width:320px){
-    #header{
+    #learns-header{
         font-size:2.2em;
         overflow:hidden
     }
 }
 @media screen and (min-width:1110px){
-    #header .tagline-container{
+    #learns-header .tagline-container{
         width:40%
     }
 }
 @media screen and (max-width:768px){
-    #header .tagline-container{
+    #learns-header .tagline-container{
         width:70%
     }
 }
 @media screen and (max-width:411px){
-    #header .tagline-container{
+    #learns-header .tagline-container{
         width:93%
     }
 }
 @media screen and (max-width:375px){
-    #header{
+    #learns-header{
         margin-bottom:0
     }
-    #header h1{
+    #learns-header h1{
         font-size:3.5em
     }
-    #header .tagline-container{
+    #learns-header .tagline-container{
         width:80%
     }
 }
@@ -421,10 +462,10 @@ font-size: 0.875em;
     body{
         overflow-x:hidden
     }
-    #header{
+    #learns-header{
         font-size:.5em
     }
-    #header .tagline-container{
+    #learns-header .tagline-container{
         width:80%
     }
 }
@@ -438,7 +479,7 @@ font-size: 0.875em;
     display:flex;
     flex-flow:row;
     justify-content:space-between;
-    z-index:10
+    /* z-index:10 */
 }
 #navbar img{
     height:100%;
@@ -561,7 +602,7 @@ font-size: 0.875em;
         font-weight:300
     }
 }
-#sponsor-overlay{
+/* #sponsor-overlay{
     position:absolute;
     width:100%;
     height:100%;
@@ -584,7 +625,7 @@ font-size: 0.875em;
     text-align:center;
     color:#000;
     border:5px solid #c6d653
-}
+} */
 @media only screen and (min-width:40em){
     #sponsor-popup{
         font-size:1.5em
