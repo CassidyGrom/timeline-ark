@@ -231,21 +231,21 @@
   width: 100%;
   max-width: 100em;
   margin: 0 auto;
-  padding-top: 55px;
+  padding-top: 5px;
   padding-bottom: 20px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 3em repeat(5, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 300px auto auto;
   grid-template-rows: 100px 3em repeat(5, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 300px auto auto;
-  grid-template-areas: "header" "mini-nav" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "contact";
+  grid-template-areas: "l-header" "mini-nav" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "contact";
 }
 @media only screen and (min-width: 45em) {
   #main {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 100px 3em repeat(3, minmax(10em, -webkit-min-content)) 300px repeat(2, minmax(10em, -webkit-min-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content));
     grid-template-rows: 100px 3em repeat(3, minmax(10em, min-content)) 300px repeat(2, minmax(10em, min-content)) 3em repeat(3, minmax(min-content, max-content));
-    grid-template-areas: "header header" "mini-nav mini-nav"  "a1 latest" "a1 latest" "a2 latest" "b1 ad" "b2 contact" "b3 contact" "title2 title3" "c1 d1" "c2 d2" "c3 d3";
+    grid-template-areas: "l-header l-header" "mini-nav mini-nav"  "a1 latest" "a1 latest" "a2 latest" "b1 ad" "b2 contact" "b3 contact" "title2 title3" "c1 d1" "c2 d2" "c3 d3";
   }
   #main .a1,
   #main .a2,
@@ -261,9 +261,9 @@
 @media only screen and (min-width: 70em) {
   #main {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 100px 3em repeat(3, minmax(10em, -webkit-min-content)) 3em 350px repeat(2, minmax(-webkit-min-content, -webkit-max-content));
-    grid-template-rows: 100px 3em repeat(3, minmax(10em, min-content)) 3em 350px repeat(2, minmax(min-content, max-content));
-    grid-template-areas: "header header header" "mini-nav mini-nav mini-nav" "a1 b1 latest" "a1 b2 latest" "a2 b3 latest" "title2 title3 ad" "c1 d1 ad" "c2 d2 contact" "c3 d3 contact";
+    grid-template-rows: 150px 3em repeat(3, minmax(10em, -webkit-min-content)) 3em 350px repeat(2, minmax(-webkit-min-content, -webkit-max-content));
+    grid-template-rows: 150px 3em repeat(3, minmax(10em, min-content)) 3em 350px repeat(2, minmax(min-content, max-content));
+    grid-template-areas: "l-header l-header l-header" "mini-nav mini-nav mini-nav" "a1 b1 latest" "a1 b2 latest" "a2 b3 latest" "title2 title3 ad" "c1 d1 ad" "c2 d2 contact" "c3 d3 contact";
   }
   #main .a2:after {
     border-bottom: none;
@@ -275,19 +275,19 @@
     border-right: #808080 1px solid;
   }
 }
-#header {
-  grid-area: header;
+#l-header {
+  grid-area: l-header;
   margin: auto 10px;
   font-family: "Merriweather", serif;
   text-align: center;
   align-content: center;
 }
-#header h1 {
+#l-header h1 {
   font-size: 4.5em;
   font-weight: 300;
   margin: 0;
 }
-#header .tagline-container {
+#l-header .tagline-container {
   width: 50%;
   margin: 0 auto;
   background-color: #c6d653;
@@ -295,11 +295,11 @@
   z-index: 2;
   bottom: 1em;
 }
-#header .header-container {
+#l-header .l-header-container {
   z-index: 5;
   position: relative;
 }
-#header h3 {
+#l-header h3 {
   font-size: 1em;
   font-weight: 300;
   font-style: italic;
@@ -307,7 +307,7 @@
   text-align: left;
   padding-left: 1em;
 }
-#header .title2 {
+#l-header .title2 {
   font-weight: 900;
   font-style: normal;
 }
@@ -391,39 +391,39 @@
   border-top: 0.5px solid #000;
 }
 @media only screen and (max-width: 639px) {
-  #header {
+  #l-header {
     font-size: 0.65em;
   }
 }
 @media only screen and (max-width: 320px) {
-  #header {
+  #l-header {
     font-size: 2.2em;
     overflow: hidden;
   }
 }
 @media screen and (min-width: 1110px) {
-  #header .tagline-container {
+  #l-header .tagline-container {
     width: 40%;
   }
 }
 @media screen and (max-width: 768px) {
-  #header .tagline-container {
+  #l-header .tagline-container {
     width: 70%;
   }
 }
 @media screen and (max-width: 411px) {
-  #header .tagline-container {
+  #l-header .tagline-container {
     width: 93%;
   }
 }
 @media screen and (max-width: 375px) {
-  #header {
+  #l-header {
     margin-bottom: 0px;
   }
-  #header h1 {
+  #l-header h1 {
     font-size: 3.5em;
   }
-  #header .tagline-container {
+  #l-header .tagline-container {
     width: 80%;
   }
 }
@@ -431,10 +431,10 @@
   body {
     overflow-x: hidden;
   }
-  #header {
+  #l-header {
     font-size: 0.5em;
   }
-  #header .tagline-container {
+  #l-header .tagline-container {
     width: 80%;
   }
 }
