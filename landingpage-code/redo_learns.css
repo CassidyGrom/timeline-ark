@@ -19,7 +19,8 @@
   height: 100%;
   width: 100%;
 }
-@media only screen and (min-width: 60em) {
+/* tablet mode */
+@media only screen and (min-width: 45em) {
   .article-container {
     flex-flow: row;
   }
@@ -209,7 +210,7 @@
 .opinion-feed {
   font-style: italic;
 }
-#feed-title {
+/* #feed-title {
   margin: 0 10px 2em;
   display: flex;
   align-items: center;
@@ -223,37 +224,9 @@
   margin: 0px 10px;
   flex: 1 1 auto;
   border-top: 0.5px solid #000;
-}
-#footer {
-  padding: 1em;
-  background-color: rgba(0,0,0,0.9);
-  display: flex;
-  justify-content: center;
-}
-@media only screen and (min-width: 40em) {
-  #footer {
-    display: block;
-  }
-}
-.footer-item {
-  font-size: 0.75em;
-  color: #fff;
-}
-@media only screen and (min-width: 40em) {
-  .footer-item {
-    font-size: 0.8em;
-  }
-}
-.footer-item:after {
-  padding: 0 1em;
-  content: "|";
-}
-.footer-item:last-child:after {
-  padding: 0;
-  content: "";
-}
+} */
 
-/* start break points */
+
 #main {
   width: 100%;
   max-width: 100em;
@@ -265,14 +238,14 @@
   grid-template-columns: 1fr;
   grid-template-rows: 100px 3em repeat(5, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 300px auto auto;
   grid-template-rows: 100px 3em repeat(5, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 300px auto auto;
-  grid-template-areas: "header" "mini-nav" "title1" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "contact";
+  grid-template-areas: "header" "mini-nav" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "contact";
 }
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 45em) {
   #main {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 100px 3em repeat(3, minmax(10em, -webkit-min-content)) 300px repeat(2, minmax(10em, -webkit-min-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content));
     grid-template-rows: 100px 3em repeat(3, minmax(10em, min-content)) 300px repeat(2, minmax(10em, min-content)) 3em repeat(3, minmax(min-content, max-content));
-    grid-template-areas: "header header" "mini-nav mini-nav" "title1 latest" "a1 latest" "a1 latest" "a2 latest" "b1 ad" "b2 contact" "b3 contact" "title2 title3" "c1 d1" "c2 d2" "c3 d3";
+    grid-template-areas: "header header" "mini-nav mini-nav"  "a1 latest" "a1 latest" "a2 latest" "b1 ad" "b2 contact" "b3 contact" "title2 title3" "c1 d1" "c2 d2" "c3 d3";
   }
   #main .a1,
   #main .a2,
@@ -285,12 +258,12 @@
     border-right: #808080 1px solid;
   }
 }
-@media only screen and (min-width: 80em) {
+@media only screen and (min-width: 70em) {
   #main {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 100px 3em repeat(3, minmax(10em, -webkit-min-content)) 3em 350px repeat(2, minmax(-webkit-min-content, -webkit-max-content));
     grid-template-rows: 100px 3em repeat(3, minmax(10em, min-content)) 3em 350px repeat(2, minmax(min-content, max-content));
-    grid-template-areas: "header header header" "mini-nav mini-nav mini-nav" "title1 title1 latest" "a1 b1 latest" "a1 b2 latest" "a2 b3 latest" "title2 title3 ad" "c1 d1 ad" "c2 d2 contact" "c3 d3 contact";
+    grid-template-areas: "header header header" "mini-nav mini-nav mini-nav" "a1 b1 latest" "a1 b2 latest" "a2 b3 latest" "title2 title3 ad" "c1 d1 ad" "c2 d2 contact" "c3 d3 contact";
   }
   #main .a2:after {
     border-bottom: none;
@@ -302,10 +275,6 @@
     border-right: #808080 1px solid;
   }
 }
-
-/* end break points */
-
-
 #header {
   grid-area: header;
   margin: auto 10px;
@@ -342,16 +311,12 @@
   font-weight: 900;
   font-style: normal;
 }
-
 #mini-nav{
   grid-area: mini-nav;
-  background-color:purple!important;
+  background-color:aqua;
 }
 .App {
   overflow: visible !important;
-}
-.mini-nav{
-  grid-area: mini-nav;
 }
 .a1 {
   grid-area: a1;
@@ -386,9 +351,7 @@
 .d3 {
   grid-area: d3;
 }
-#title1 {
-  grid-area: title1;
-}
+
 #title2 {
   grid-area: title2;
 }
