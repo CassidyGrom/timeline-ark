@@ -282,7 +282,8 @@
 /* desktop */
 @media only screen and (min-width: 70em) {
   #main {
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns:repeat(3,1fr); */
+    grid-template-columns: 1.3fr 1fr 20em;;
     grid-template-rows: 150px 3em repeat(3, minmax(10em, -webkit-min-content)) 3em 350px repeat(2, minmax(-webkit-min-content, -webkit-max-content));
     grid-template-rows: 150px 3em repeat(3, minmax(10em, min-content)) 3em 350px repeat(2, minmax(min-content, max-content));
     grid-template-areas: "l-header l-header l-header" "mini-nav mini-nav mini-nav" "a1 b1 latest" "a1 b2 latest" "a2 b3 latest" "title2 title3 ad" "c1 d1 ad" "c2 d2 contact" "c3 d3 contact";
