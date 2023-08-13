@@ -237,9 +237,9 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 110px 3em repeat(5, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 300px auto auto;
-  grid-template-rows: 110px 3em repeat(5, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 300px auto auto;
-  grid-template-areas: "l-header" "mini-nav" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "data-story";
+  grid-template-rows: 110px 3em repeat(13, minmax(-webkit-min-content, -webkit-max-content));
+  grid-template-rows: 110px 3em repeat(13, minmax(min-content, max-content));
+  grid-template-areas: "l-header" "mini-nav" "a1" "b1" "b2" "data-story" "b3" "c1" "c2" "ad" "c3" "d1" "d2" "long-ad" "d3" "latest";
 }
 .flex-item a{
   padding: 0px .5em;
@@ -257,9 +257,19 @@
 @media only screen and (min-width: 45em) {
   #main {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 125px 3em repeat(3, minmax(10em, -webkit-min-content)) 300px repeat(2, minmax(10em, -webkit-min-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content));
-    grid-template-rows: 125px 3em repeat(3, minmax(10em, min-content)) 300px repeat(2, minmax(10em, min-content)) 3em repeat(3, minmax(min-content, max-content));
-    grid-template-areas: "l-header l-header" "mini-nav mini-nav"  "a1 latest" "a1 latest" "b1 ad" "b2 data-story" "b3 data-story" "title2 title3" "c1 d1" "c2 d2" "c3 d3";
+    grid-template-rows: 125px 3em repeat(9, minmax(10em, -webkit-min-content));
+    grid-template-rows: 125px 3em repeat(9, minmax(10em, min-content));
+    grid-template-areas: "l-header l-header" 
+                          "mini-nav mini-nav"  
+                          "a1 latest" 
+                          "a1 latest" 
+                          "b1 data-story" 
+                          "b2 data-story" 
+                          "b3 c1" 
+                          "c2 long-ad" 
+                          "c3 long-ad" 
+                          "d1 d2" 
+                          "ad d3";
   }
   #main .a1,
   #main .a2,
