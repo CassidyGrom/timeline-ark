@@ -226,7 +226,7 @@
   border-top: 0.5px solid #000;
 } */
 
-
+/* phone */
 #main {
   width: 100%;
   max-width: 100em;
@@ -236,15 +236,28 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 3em repeat(5, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 300px auto auto;
-  grid-template-rows: 100px 3em repeat(5, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 300px auto auto;
+  grid-template-rows: 110px 3em repeat(5, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content)) 300px auto auto;
+  grid-template-rows: 110px 3em repeat(5, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 3em repeat(3, minmax(min-content, max-content)) 300px auto auto;
   grid-template-areas: "l-header" "mini-nav" "a1" "a2" "b1" "b2" "b3" "title2" "c1" "c2" "c3" "title3" "d1" "d2" "d3" "ad" "latest" "contact";
 }
+.flex-item a{
+  padding: 0px .5em;
+  line-height: 50px;
+  color:white;
+  font-size: 1em;
+  text-align: center;
+  text-decoration:none;
+}
+.flex-item a:visited{
+  color:white;
+}
+
+/* tablet */
 @media only screen and (min-width: 45em) {
   #main {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100px 3em repeat(3, minmax(10em, -webkit-min-content)) 300px repeat(2, minmax(10em, -webkit-min-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content));
-    grid-template-rows: 100px 3em repeat(3, minmax(10em, min-content)) 300px repeat(2, minmax(10em, min-content)) 3em repeat(3, minmax(min-content, max-content));
+    grid-template-rows: 125px 3em repeat(3, minmax(10em, -webkit-min-content)) 300px repeat(2, minmax(10em, -webkit-min-content)) 3em repeat(3, minmax(-webkit-min-content, -webkit-max-content));
+    grid-template-rows: 125px 3em repeat(3, minmax(10em, min-content)) 300px repeat(2, minmax(10em, min-content)) 3em repeat(3, minmax(min-content, max-content));
     grid-template-areas: "l-header l-header" "mini-nav mini-nav"  "a1 latest" "a1 latest" "a2 latest" "b1 ad" "b2 contact" "b3 contact" "title2 title3" "c1 d1" "c2 d2" "c3 d3";
   }
   #main .a1,
@@ -257,7 +270,16 @@
   #main .c3 {
     border-right: #808080 1px solid;
   }
+
+  .flex-item a{
+    padding: 0px .8em;
+    font-size: 1.2em;
+  }
+
+
 }
+
+/* desktop */
 @media only screen and (min-width: 70em) {
   #main {
     grid-template-columns: repeat(3, 1fr);
@@ -274,6 +296,13 @@
   #main #title3 {
     border-right: #808080 1px solid;
   }
+
+  .flex-item a{
+    padding: 0px 2em;
+    font-size: 1.2em;
+  }
+
+
 }
 #l-header {
   grid-area: l-header;
@@ -313,8 +342,18 @@
 }
 #mini-nav{
   grid-area: mini-nav;
-  background-color:aqua;
+  background-color: #0274b7;
 }
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+.center { 
+  justify-content: center; 
+}  
+
 .App {
   overflow: visible !important;
 }
@@ -390,7 +429,7 @@
   flex: 1 1 auto;
   border-top: 0.5px solid #000;
 }
-@media only screen and (max-width: 639px) {
+/* @media only screen and (max-width: 639px) {
   #l-header {
     font-size: 0.65em;
   }
@@ -401,11 +440,11 @@
     overflow: hidden;
   }
 }
-@media screen and (min-width: 1110px) {
+/* @media screen and (min-width: 1110px) {
   #l-header .tagline-container {
     width: 40%;
   }
-}
+} */
 @media screen and (max-width: 768px) {
   #l-header .tagline-container {
     width: 70%;
@@ -426,7 +465,7 @@
   #l-header .tagline-container {
     width: 80%;
   }
-}
+} */
 @media screen and (max-width: 320px) {
   body {
     overflow-x: hidden;
