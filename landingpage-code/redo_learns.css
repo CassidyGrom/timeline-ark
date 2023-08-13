@@ -8,7 +8,7 @@
   object-fit: contain;
 }
 .grey {
-  color: #696969 !important;
+  color: white!important;
 }
 .article-container {
   padding: 20px;
@@ -41,14 +41,14 @@
   flex-flow: column-reverse;
 }
 .a1 .article-container .article-headline a {
-  font-family: "Merriweather", serif;
-  font-weight: 900;
+  font-family: "tasman", sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 1.45em;
   line-height: 1.2em;
 }
 .a1 .article-container .article-description a {
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
@@ -65,7 +65,7 @@
   padding: 0 0 0 0;
 }
 .a1 .article-headline {
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-weight: 700;
   font-style: normal;
   margin-top: 0.5em;
@@ -73,7 +73,7 @@
 }
 .opinion .article-headline {
   font-size: 1.2em;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-weight: 700;
   font-style: italic;
 }
@@ -103,7 +103,8 @@
 }
 .article-headline {
   font-size: 1.2em;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
+  line-height:1.1em;
   font-weight: 700;
   font-style: normal;
   margin-top: 0.5em;
@@ -111,21 +112,20 @@
 }
 .article-description {
   font-size: 0.8em;
-  line-height: 0.8em;
-  font-family: "Merriweather", serif;
+  line-height: 1.2em;
+  font-family: "tasman", sans-serif;
   font-weight: 400;
-  line-height: 1.63;
   margin-bottom: 0;
   margin-top: 7px;
   color: #a9a9a9;
 }
 .tag {
+  font-family: lato, sans-serif;
   font-size: 0.8em;
   margin-right: 5px;
-  background: #c6d653;
-  color: #696969;
+  background: #0274b7;
+  color: white;
   padding: 2px 5px;
-  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 .image-container {
@@ -148,7 +148,7 @@
   margin: 0 10px 1em;
   display: flex;
   align-items: center;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1em;
@@ -195,7 +195,7 @@
 }
 #feed-container li:before {
   content: "■";
-  color: #c6d653;
+  color: rgb(2, 116, 183);
   display: inline-block;
   width: 0.9em;
   margin-left: -1em;
@@ -204,7 +204,7 @@
 #feed-container li {
   color: #000;
   padding-bottom: 1.5em;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-weight: 400;
 }
 .opinion-feed {
@@ -308,7 +308,7 @@
 #l-header {
   grid-area: l-header;
   margin: auto 10px;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   text-align: center;
   align-content: center;
 }
@@ -419,7 +419,7 @@
   padding: 0 10px;
   display: flex;
   align-items: center;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 1em;
@@ -549,7 +549,7 @@
 }
 .njdc-links a {
   color: #000;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-weight: 400;
   font-size: 0.7em;
 }
@@ -581,7 +581,7 @@
   margin-top: 10px;
   padding: 0.3em;
   border-radius: 5px;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-weight: 300;
   font-size: 0.5em;
   padding: 0.5em;
@@ -636,7 +636,7 @@
   background-color: #fff;
   padding: 0 20px 20px 20px;
   box-sizing: border-box;
-  font-family: "Merriweather", serif;
+  font-family: "tasman", sans-serif;
   font-weight: 500;
   font-size: 1.2em;
   text-align: center;
@@ -679,7 +679,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "tasman", sans-serif;
 }
 html,
 body,
