@@ -247,21 +247,9 @@
 .opinion-feed {
   font-style: italic;
 }
-/* #feed-title {
-  margin: 0 10px 2em;
-  display: flex;
-  align-items: center;
-  font-family: "Merriweather", serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1em;
+#feed-title {
+ margin-left:1em;
 }
-#feed-title:after {
-  content: "";
-  margin: 0px 10px;
-  flex: 1 1 auto;
-  border-top: 0.5px solid #000;
-} */
 
 /* phone */
 #main {
@@ -293,14 +281,13 @@
 @media only screen and (min-width: 45em) {
   #main {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 125px 3em repeat(9, minmax(10em, -webkit-min-content));
-    grid-template-rows: 125px 3em repeat(9, minmax(10em, min-content));
+    grid-template-rows: 125px 3em repeat(8, minmax(10em, -webkit-min-content));
+    grid-template-rows: 125px 3em repeat(8, minmax(10em, min-content));
     grid-template-areas: "l-header l-header" 
                           "mini-nav mini-nav"  
                           "a1 latest" 
-                          "a1 latest" 
-                          "b1 data-story" 
-                          "b2 data-story" 
+                          "a1 data-story" 
+                          "b1 b2" 
                           "b3 c1" 
                           "c2 long-ad" 
                           "c3 long-ad" 
@@ -359,8 +346,12 @@
     font-size: 1.2em;
   }
 
-
 }
+
+#data-story .article-container {
+  flex-flow: column-reverse;
+}
+
 #l-header {
   grid-area: l-header;
   margin: auto 10px;
