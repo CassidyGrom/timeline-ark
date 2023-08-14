@@ -71,6 +71,39 @@
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+
+#data-story{
+  text-align: left;
+}
+#data-story .article-container {
+  flex-flow: column-reverse;
+}
+#data-story .article-container .article-description a {
+  font-family: "tasman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #808080;
+}
+#data-story .article-headline {
+  font-family: "tasman", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#data-story .article-media-container {
+  max-height: 70%;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+#data-story .article-content-container {
+  max-width: 100%;
+  padding: 0 0 0 0;
+}
+
 .opinion .article-headline {
   font-size: 1.2em;
   font-family: "tasman", sans-serif;
@@ -143,7 +176,10 @@
 }
 #data-story {
   grid-area: data-story;
-  background-color: red;
+}
+
+#data-story .image-container img{
+  height:20em;
 }
 /* #contact-title {
   margin: 0 10px 1em;
