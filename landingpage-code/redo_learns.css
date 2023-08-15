@@ -244,9 +244,9 @@
   font-family: "tasman", sans-serif;
   font-weight: 400;
 }
-.opinion-feed {
+/* .opinion-feed {
   font-style: italic;
-}
+} */
 #feed-title {
  margin-left:1em;
 }
@@ -261,12 +261,12 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 110px 3em repeat(13, minmax(-webkit-min-content, -webkit-max-content));
-  grid-template-rows: 110px 3em repeat(13, minmax(min-content, max-content));
+  grid-template-rows: 90px 3em repeat(13, minmax(-webkit-min-content, -webkit-max-content));
+  grid-template-rows: 90px 3em repeat(13, minmax(min-content, max-content));
   grid-template-areas: "l-header" "mini-nav" "a1" "b1" "b2" "data-story" "b3" "c1" "c2" "ad" "c3" "d1" "d2" "long-ad" "d3" "latest";
 }
 .flex-item a{
-  padding: 0px .5em;
+  padding: 0px 7px;
   line-height: 50px;
   color:white;
   font-size: 1em;
@@ -275,6 +275,9 @@
 }
 .flex-item a:visited{
   color:white;
+}
+#l-header img{
+  height: 100%;
 }
 
 /* tablet */
@@ -306,8 +309,12 @@
   }
 
   .flex-item a{
-    padding: 0px .8em;
+    padding: 0px 15px;
     font-size: 1.2em;
+  }
+
+  #l-header img{
+    height: 100%;
   }
 
 
@@ -318,16 +325,16 @@
   #main {
     /* grid-template-columns:repeat(3,1fr); */
     grid-template-columns: 1.3fr 1fr 20em;
-    grid-template-rows: 150px 3em repeat(6, minmax(10em, min-content));
-    grid-template-rows: 150px 3em repeat(6, minmax(10em, -webkit-min-content));
+    grid-template-rows: 115px 3em repeat(6, minmax(10em, min-content));
+    grid-template-rows: 115px 3em repeat(6, minmax(10em, -webkit-min-content));
     /* grid-template-rows: 150px 3em repeat(3, minmax(10em, -webkit-min-content)) 3em 350px repeat(2, minmax(-webkit-min-content, -webkit-max-content));
     grid-template-rows: 150px 3em repeat(3, minmax(10em, min-content)) 3em 350px repeat(2, minmax(min-content, max-content)); */
     grid-template-areas: "l-header l-header l-header" 
                         "mini-nav mini-nav mini-nav" 
-                        "a1 b1 data-story" 
-                        "a1 b2 data-story" 
+                        "a1 b1 latest" 
+                        "a1 b2 latest" 
                         "c1 b3 latest"
-                        "ad d1 latest" 
+                        "ad d1 long-ad" 
                         "c2 d2 long-ad" 
                         "c3 d3 long-ad";
   }
@@ -342,7 +349,7 @@
   }
 
   .flex-item a{
-    padding: 0px 2em;
+    padding: 0px 15px;
     font-size: 1.2em;
   }
 
@@ -358,6 +365,9 @@
   font-family: "tasman", sans-serif;
   text-align: center;
   align-content: center;
+}
+#l-header img{
+  height: 75%;
 }
 #l-header h1 {
   font-size: 4.5em;

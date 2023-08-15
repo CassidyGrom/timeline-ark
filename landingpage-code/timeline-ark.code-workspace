@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../copy_draft_LEARNS"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "copy_draft_LEARNS"
+	}
+}
