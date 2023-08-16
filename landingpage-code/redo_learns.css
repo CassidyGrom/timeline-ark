@@ -207,7 +207,7 @@ a {
   text-decoration:none;
 }
 .flex-item a:visited{
-  color:white;
+  color:white!important;
 }
 #l-header img{
   height: 100%;
