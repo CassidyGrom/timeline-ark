@@ -201,12 +201,18 @@ a {
 .flex-item a{
   padding: 0px 7px;
   line-height: 50px;
-  color:white;
+  color:white!important;
   font-size: 1em;
   text-align: center;
   text-decoration:none;
 }
 .flex-item a:visited{
+  color:white!important;
+}
+.flex-item a:active{
+  color:white!important;
+}
+.flex-item a:hover{
   color:white!important;
 }
 #l-header img{
