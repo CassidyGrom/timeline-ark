@@ -78,6 +78,7 @@ a {
 .a1 .article-content-container {
   max-width: 100%;
   padding: 0 0 0 0;
+  margin-top: 6px;
 }
 .a1 .article-headline {
   font-family: "tasman", sans-serif;
@@ -155,12 +156,12 @@ a {
 
 #feed-container {
   grid-area: latest;
-  overflow-y: scroll;
-  margin: 10px 0;
+  overflow-y: hidden;
+  margin: 10px 0px 0px 10px;
 }
 #feed-container ul {
   list-style: none;
-  margin: 0 20px 0 0;
+  margin:10px 0 0;
 }
 #feed-container li:before {
   content: "■";
@@ -178,7 +179,9 @@ a {
 }
 
 #feed-title {
- margin-left:1em;
+ /* margin-left:.5em; */
+ font-family: "tasman", sans-serif;
+ font-weight: 800;
 }
 
 /* phone */
